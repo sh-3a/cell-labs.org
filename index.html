@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Lab</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <canvas id="menuBackground" class="hidden"></canvas>
+    <!-- MAIN MENU -->
+<div id="mainMenu" class="screen">
+    <h1>Cell Lab</h1>
+    <p>Build. Experiment. Simulate.</p>
+
+    <button id="createCellButton">Create Cell</button>
+    
+</div>
+
+<!-- CELL TYPE MENU -->
+<div id="cellTypeMenu" class="screen hidden">
+
+    <h1>Choose Cell Type</h1>
+
+    <div class="choices">
+
+        <button class="cellChoice" data-type="prokaryotic">
+            <h2>Prokaryotic</h2>
+            <p>No nucleus</p>
+            <p>Simple cell structure</p>
+        </button>
+
+        <button class="cellChoice" data-type="eukaryotic">
+            <h2>Eukaryotic</h2>
+            <p>Has a nucleus</p>
+            <p>More complex structure</p>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- TEMPLATE MENU -->
+<div id="templateMenu" class="screen hidden">
+
+    <h1>Choose a Template</h1>
+    <p>Start from scratch or use a pre-built cell.</p>
+
+    <div class="choices">
+
+        <button class="templateChoice" data-template="blank">
+            <h2>Blank Cell</h2>
+            <p>Build everything yourself</p>
+        </button>
+
+        <button class="templateChoice" data-template="prokaryote">
+            <h2>Basic Prokaryote</h2>
+            <p>Simple cell structure</p>
+        </button>
+
+        <button class="templateChoice" data-template="eukaryote">
+            <h2>Basic Eukaryote</h2>
+            <p>Complex cell structure</p>
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- CELL EDITOR -->
+    <div id="editor" class="screen hidden">
+
+        <div class="topBar">
+            <h1>Cell Editor</h1>
+            <span id="cellTypeDisplay"></span>
+        </div>
+
+        <div class="editorLayout">
+
+            <div class="tools">
+                <h2>Organelles</h2>
+
+                <button class="organelleButton" data-organelle="membrane">
+                    Cell Membrane
+                </button>
+
+                <button class="organelleButton" data-organelle="ribosome">
+                    Ribosome
+                </button>
+
+                <button class="organelleButton eukOnly" data-organelle="nucleus">
+                    Nucleus
+                </button>
+
+                <button class="organelleButton eukOnly" data-organelle="mitochondria">
+                    Mitochondria
+                </button>
+
+                <button id="startSimulation">
+                    ▶ Simulate
+                </button>
+            </div>
+
+            <div class="canvasContainer">
+                <canvas id="cellCanvas"></canvas>
+            </div>
+
+        </div>
+</div>
+
+    <!-- SIMULATION -->
+    <div id="simulation" class="screen hidden">
+
+        <div class="simulationBar">
+    <h1>Cell Lab</h1>
+
+    <div>
+        <span>Energy: </span>
+        <span id="energyDisplay">100</span>
+
+        <button id="pauseButton">⏸ Pause</button>
+        <button id="resetButton">↻ Reset</button>
+        <button id="menuButton">↩ Menu</button>
+    </div>
+</div>
+
+        <canvas id="simulationCanvas"></canvas>
+
+    </div>
+    <div id="deathPopup" class="hidden">
+    <div id="deathPopupBox">
+        <h2>Cell Died</h2>
+        <p id="deathReason"></p>
+        <button id="deathMenuButton">Return to Menu</button>
+    </div>
+</div>
+
+    <script src="game.js"></script>
+    <script src="menuBackground.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</body>
+</html>

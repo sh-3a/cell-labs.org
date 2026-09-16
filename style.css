@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    margin: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+#createCellButton {
+    margin-top: 30px;
+}
+
+.choices {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.cellChoice {
+    width: 280px;
+    height: 220px;
+}
+
+.cellChoice h2 {
+    font-size: 28px;
+}
+
+/* =========================
+   TEMPLATE MENU
+   ========================= */
+
+.templateChoice {
+    width: 280px;
+    height: 220px;
+}
+
+.templateChoice h2 {
+    font-size: 26px;
+}
+
+.templateChoice p {
+    font-size: 16px;
+}
+
+/* =========================
+   CELL EDITOR
+   ========================= */
+
+#editor {
+    width: 100vw;
+    height: 100vh;
+}
+
+.topBar {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editorLayout {
+    width: 95vw;
+    height: 80vh;
+    display: flex;
+    gap: 20px;
+}
+
+.tools {
+    width: 250px;
+    padding: 20px;
+    background: #1d1d1d;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tools h2 {
+    margin-top: 0;
+}
+
+.organelleButton {
+    width: 100%;
+    margin: 5px 0;
+}
+
+#startSimulation {
+    margin-top: auto;
+}
+
+.canvasContainer {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    background: #080808;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cellCanvas {
+    width: 90%;
+    height: 90%;
+}
+
+/* =========================
+   SIMULATION
+   ========================= */
+
+#simulation {
+    width: 100vw;
+    height: 100vh;
+}
+
+.simulationBar {
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1b1b1b;
+}
+
+.simulationBar h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+#simulationCanvas {
+    display: block;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background: #050505;
+}
+
+#menuBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: #050505;
+    pointer-events: none
+}
+
+#mainMenu {
+    position: relative;
+    z-index: 10;
+}
+
+#menuBackground.hidden {
+    display: none
+}
+
+#deathPopup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#deathPopup.hidden {
+    display: none;
+}
+
+#deathPopupBox {
+    background: #1d1d1d;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    max-width: 90vw;
+}
+
+#deathPopupBox h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+#deathReason {
+    font-size: 18px;
+    margin: 20px 0;
+}
